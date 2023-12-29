@@ -1,0 +1,35 @@
+# Repos
+Froude\--Krylov-Wave-Forcing
+
+heron
+
+heron-mppi
+
+heron-stochastic-control-container
+
+heron_custom_worlds
+
+heron_mppi_control
+
+heron_simulator
+
+MPPI-Generic
+
+pl-utils
+
+ros-cudagl-container
+
+vrx
+
+# Containers
+heron-stochastic-control-container -> ros-cudagl-container: depends on
+heron_simulator -> heron-stochastic-control-container: runs in
+heron_mppi_control -> heron-stochastic-control-container: runs in
+
+# Heron/VRX
+heron_simulator -> vrx: depends on
+heron_simulator -> heron: depends on
+
+# MPPI Code
+heron-mppi -> MPPI-Generic: depends on
+heron_mppi_control -> heron-mppi: depends on
